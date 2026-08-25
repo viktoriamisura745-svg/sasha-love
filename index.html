@@ -384,17 +384,35 @@ document.getElementById("s"+number)
 
 }
 
-
-/* УБЕГАЮЩАЯ КНОПКА */
+/* УБЕГАЮЩАЯ КНОПКА 😂 */
 
 function setup(){
 
-const noButton=document.getElementById("noBtn");
+const noButton = document.getElementById("noBtn");
 
 if(!noButton){
 setTimeout(setup,100);
 return;
 }
+
+let attempts = 0;
+
+const texts = [
+"НЕТ 😐",
+"Ты уверен? 🥺",
+"Саша, подумай ещё 😂",
+"Ты сейчас серьёзно?! 😭",
+"Кабанчик, не позорься 🐷",
+"Ну куда ты жмёшь 😂",
+"НЕТ не принимается 😌",
+"Попробуй ещё раз 😏",
+"Я тебя люблю, а ты НЕТ?! 😭",
+"Последнее предупреждение 🚨😂",
+"Хорошая попытка 😌",
+"НЕТ убежало 🏃‍♂️💨",
+"Сдавайся уже 😂❤️",
+"Тут только ДА ❤️"
+];
 
 function runAway(event){
 
@@ -402,26 +420,34 @@ if(event){
 event.preventDefault();
 }
 
-const x=Math.random()*240-120;
-const y=Math.random()*260-130;
+attempts++;
 
-noButton.style.transform=
-"translate("+x+"px,"+y+"px)";
+/* Меняем надпись */
 
-const texts=[
-"НЕТ 😐",
-"Ты уверен? 🥺",
-"Саша, подумай хорошенько 😂",
-"Ты сейчас серьёзно? 😭",
-"Кабанчик, не позорься 😂🐷",
-"Попытка засчитана… но НЕТ не работает 😌",
-"Я сказала ДА ❤️",
-"Хватит убегать 😭",
-"ДА — единственный правильный ответ ❤️"
-];
+if(attempts < texts.length){
+noButton.textContent = texts[attempts];
+}else{
+noButton.textContent = "ДА ❤️";
+}
 
-noButton.textContent=
-texts[Math.floor(Math.random()*texts.length)];
+/* Каждый раз убегает по-другому */
+
+const maxX = Math.min(window.innerWidth * 0.35, 150);
+const maxY = Math.min(window.innerHeight * 0.25, 180);
+
+const x = (Math.random() * 2 - 1) * maxX;
+const y = (Math.random() * 2 - 1) * maxY;
+
+noButton.style.transform =
+"translate(" + x + "px," + y + "px) rotate(" +
+(Math.random() * 20 - 10) + "deg)";
+
+/* После нескольких попыток кнопка становится меньше */
+
+if(attempts >= 5){
+noButton.style.fontSize =
+Math.max(12,18 - attempts) + "px";
+}
 
 }
 
@@ -432,6 +458,7 @@ noButton.addEventListener("click",runAway);
 }
 
 setup();
+
 
 </script>
 
