@@ -6,133 +6,150 @@
 <title>Для моего Саши ❤️</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
-margin:0;
-min-height:100vh;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#fff5f8,#ffdce7);
-color:#542b36;
-overflow-x:hidden;
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#fff5f8,#ffdce7);
+  color:#542b36;
+  overflow-x:hidden;
 }
 
 .screen{
-display:none;
-min-height:100vh;
-padding:25px 18px;
-align-items:center;
-justify-content:center;
-text-align:center;
+  display:none;
+  min-height:100vh;
+  padding:25px 18px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
 .screen.active{
-display:flex;
-animation:appear .6s ease;
+  display:flex;
+  animation:appear .6s ease;
 }
 
 .card{
-width:100%;
-max-width:650px;
+  width:100%;
+  max-width:650px;
 }
 
 h1{
-font-size:clamp(38px,10vw,60px);
-margin:15px 0;
+  font-size:clamp(38px,10vw,60px);
+  margin:15px 0;
 }
 
 h2{
-font-size:clamp(28px,8vw,42px);
+  font-size:clamp(28px,8vw,42px);
 }
 
 p{
-font-size:19px;
-line-height:1.6;
+  font-size:19px;
+  line-height:1.6;
 }
 
 .heart{
-font-size:75px;
-animation:pulse 1.5s infinite;
+  font-size:75px;
+  animation:pulse 1.5s infinite;
 }
 
 button{
-border:0;
-border-radius:50px;
-padding:16px 28px;
-margin:8px;
-font-size:18px;
-background:#e84d75;
-color:white;
-box-shadow:0 8px 25px #b84e6a44;
+  border:0;
+  border-radius:50px;
+  padding:16px 28px;
+  margin:8px;
+  font-size:18px;
+  background:#e84d75;
+  color:white;
+  box-shadow:0 8px 25px #b84e6a44;
+  cursor:pointer;
 }
 
 .secondary{
-background:white;
-color:#e84d75;
+  background:white;
+  color:#e84d75;
 }
 
 #noBtn{
-position:relative;
-transition:.15s;
+  position:relative;
+  transition:.15s;
 }
 
-.photos{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin:20px 0;
+.moments{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin:25px 0;
 }
 
-.photo{
-height:170px;
-border-radius:22px;
-background:#ffffffaa;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:18px;
-box-shadow:0 8px 25px #a84c6522;
-overflow:hidden;
+.moment{
+  background:rgba(255,255,255,.78);
+  border-radius:24px;
+  padding:20px 14px;
+  box-shadow:0 8px 25px rgba(180,80,110,.12);
+  transition:transform .25s ease;
 }
 
-.photo img{
-width:100%;
-height:100%;
-object-fit:cover;
+.moment:active{
+  transform:scale(.96);
+}
+
+.moment-icon{
+  font-size:42px;
+  margin-bottom:8px;
+}
+
+.moment h3{
+  margin:8px 0;
+  font-size:19px;
+}
+
+.moment p{
+  font-size:15px;
+  line-height:1.45;
+  margin:0;
 }
 
 .letter{
-background:#ffffffcc;
-border-radius:25px;
-padding:24px;
-text-align:left;
-font-size:17px;
-line-height:1.65;
-box-shadow:0 10px 30px #a84c6522;
+  background:rgba(255,255,255,.8);
+  border-radius:25px;
+  padding:24px;
+  text-align:left;
+  font-size:17px;
+  line-height:1.65;
+  box-shadow:0 10px 30px #a84c6522;
 }
 
 .small{
-font-size:14px;
-opacity:.7;
+  font-size:14px;
+  opacity:.7;
 }
 
 @keyframes appear{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 @keyframes pulse{
-50%{transform:scale(1.12)}
+  50%{
+    transform:scale(1.12);
+  }
 }
 
 @media(max-width:500px){
-.photos .photo{height:145px}
+  .moments{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -208,52 +225,70 @@ transform:translateY(0);
 <section class="screen" id="s4">
 <div class="card">
 
-<h2>Наша история 📸</h2>
+<h2>Наша история ❤️</h2>
 
 <p>
-Здесь будут наши самые любимые моменты ❤️
+Не фотографии, а маленькие кусочки того,
+что я люблю в нас.
 </p>
+
 <div class="moments">
 
-  <div class="moment">
-    <div class="moment-icon">💕</div>
-    <h3>Наши моменты</h3>
-    <p>Все маленькие моменты с тобой почему-то становятся для меня особенными.</p>
-  </div>
+<div class="moment">
+<div class="moment-icon">💕</div>
+<h3>Наши моменты</h3>
+<p>
+Все маленькие моменты с тобой почему-то
+становятся для меня особенными.
+</p>
+</div>
 
-  <div class="moment">
-    <div class="moment-icon">😂</div>
-    <h3>Наши приколы</h3>
-    <p>Иногда мы смеёмся с такой ерунды, что другим это вообще не объяснить.</p>
-  </div>
+<div class="moment">
+<div class="moment-icon">😂</div>
+<h3>Наши приколы</h3>
+<p>
+Иногда мы смеёмся с такой ерунды,
+что другим это вообще не объяснить.
+</p>
+</div>
 
-  <div class="moment">
-    <div class="moment-icon">🫂</div>
-    <h3>Твои объятия</h3>
-    <p>Место, где мне спокойно, тепло и просто хорошо.</p>
-  </div>
+<div class="moment">
+<div class="moment-icon">🫂</div>
+<h3>Твои объятия</h3>
+<p>
+Место, где мне спокойно, тепло
+и просто хорошо.
+</p>
+</div>
 
-  <div class="moment">
-    <div class="moment-icon">🥹</div>
-    <h3>Мой любимый человек</h3>
-    <p>Я до сих пор иногда смотрю на тебя и думаю: «Как же мне повезло».</p>
-  </div>
+<div class="moment">
+<div class="moment-icon">🥹</div>
+<h3>Мой любимый человек</h3>
+<p>
+Иногда я смотрю на тебя и думаю:
+«Как же мне повезло».
+</p>
+</div>
 
-  <div class="moment">
-    <div class="moment-icon">☀️</div>
-    <h3>Моё солнышко</h3>
-    <p>Спасибо тебе за улыбки, заботу и за то, что ты просто есть.</p>
-  </div>
+<div class="moment">
+<div class="moment-icon">☀️</div>
+<h3>Моё солнышко</h3>
+<p>
+Спасибо тебе за улыбки, заботу
+и за то, что ты просто есть.
+</p>
+</div>
 
-  <div class="moment">
-    <div class="moment-icon">🐷❤️</div>
-    <h3>Мой кабанчик</h3>
-    <p>Да-да, именно ты 😂 И я всё равно тебя безумно люблю.</p>
-  </div>
+<div class="moment">
+<div class="moment-icon">🐷❤️</div>
+<h3>Мой кабанчик</h3>
+<p>
+Да-да, именно ты 😂
+И я всё равно тебя безумно люблю.
+</p>
+</div>
 
 </div>
-  
-
 
 <button onclick="go(5)">
 Для тебя ещё кое-что есть 💌
@@ -274,9 +309,11 @@ transform:translateY(0);
 
 Сашенька, моё солнышко ❤️<br><br>
 
-Я просто хочу сказать тебе, что очень сильно тебя люблю.
+Я просто хочу сказать тебе,
+что очень сильно тебя люблю.
 
-Мне нравится всё наше — наши разговоры, наши шутки,
+Мне нравится всё наше —
+наши разговоры, наши шутки,
 наши маленькие моменты и даже те ситуации,
 когда мы можем немного поругаться,
 а потом всё равно тянемся друг к другу.<br><br>
@@ -288,12 +325,12 @@ transform:translateY(0);
 
 Ты для меня не просто мой парень.
 Ты мой самый родной человек,
-моё солнышко и мой любимый котёночек.
+моё солнышко и мой любимый котёночек.<br><br>
 
 Ну и иногда мой кабанчик, конечно же 😂❤️<br><br>
 
 Я очень ценю тебя и всё,
-что между нами есть.
+что между нами есть.<br><br>
 
 Люблю тебя. Очень. ❤️
 
@@ -373,10 +410,14 @@ noButton.style.transform=
 
 const texts=[
 "НЕТ 😐",
-"Точно? 🥺",
-"Подумай ещё 😭",
-"Не получится 😌",
-"Нажми ДА ❤️"
+"Ты уверен? 🥺",
+"Саша, подумай хорошенько 😂",
+"Ты сейчас серьёзно? 😭",
+"Кабанчик, не позорься 😂🐷",
+"Попытка засчитана… но НЕТ не работает 😌",
+"Я сказала ДА ❤️",
+"Хватит убегать 😭",
+"ДА — единственный правильный ответ ❤️"
 ];
 
 noButton.textContent=
