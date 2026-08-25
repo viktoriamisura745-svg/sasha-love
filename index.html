@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Для моего Саши ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+min-height:100vh;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#fff5f8,#ffdce7);
+color:#542b36;
+overflow-x:hidden;
+}
+
+.screen{
+display:none;
+min-height:100vh;
+padding:25px 18px;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.screen.active{
+display:flex;
+animation:appear .6s ease;
+}
+
+.card{
+width:100%;
+max-width:650px;
+}
+
+h1{
+font-size:clamp(38px,10vw,60px);
+margin:15px 0;
+}
+
+h2{
+font-size:clamp(28px,8vw,42px);
+}
+
+p{
+font-size:19px;
+line-height:1.6;
+}
+
+.heart{
+font-size:75px;
+animation:pulse 1.5s infinite;
+}
+
+button{
+border:0;
+border-radius:50px;
+padding:16px 28px;
+margin:8px;
+font-size:18px;
+background:#e84d75;
+color:white;
+box-shadow:0 8px 25px #b84e6a44;
+}
+
+.secondary{
+background:white;
+color:#e84d75;
+}
+
+#noBtn{
+position:relative;
+transition:.15s;
+}
+
+.photos{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin:20px 0;
+}
+
+.photo{
+height:170px;
+border-radius:22px;
+background:#ffffffaa;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+box-shadow:0 8px 25px #a84c6522;
+overflow:hidden;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.letter{
+background:#ffffffcc;
+border-radius:25px;
+padding:24px;
+text-align:left;
+font-size:17px;
+line-height:1.65;
+box-shadow:0 10px 30px #a84c6522;
+}
+
+.small{
+font-size:14px;
+opacity:.7;
+}
+
+@keyframes appear{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes pulse{
+50%{transform:scale(1.12)}
+}
+
+@media(max-width:500px){
+.photos .photo{height:145px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ЭКРАН 1 -->
+
+<section class="screen active" id="s1">
+<div class="card">
+
+<div class="heart">❤️</div>
+
+<h1>Для моего Саши</h1>
+
+<p>
+Солнышко, котёночек и мой любимый кабанчик…<br>
+я приготовила для тебя кое-что маленькое.
+</p>
+
+<button onclick="go(2)">
+Открыть 💌
+</button>
+
+</div>
+</section>
+
+
+<!-- ЭКРАН 2 -->
+
+<section class="screen" id="s2">
+<div class="card">
+
+<h2>Саша, ответь честно… 🥺</h2>
+
+<p>Ты меня любишь?</p>
+
+<button onclick="go(3)">
+ДА ❤️
+</button>
+
+<button id="noBtn" class="secondary">
+НЕТ 😐
+</button>
+
+</div>
+</section>
+
+
+<!-- ЭКРАН 3 -->
+
+<section class="screen" id="s3">
+<div class="card">
+
+<div class="heart">😭❤️</div>
+
+<h2>Я ТАК И ЗНАЛААА!</h2>
+
+<p>
+Ну всё, теперь отмазаться уже не получится 😌
+</p>
+
+<button onclick="go(4)">
+Идём дальше →
+</button>
+
+</div>
+</section>
+
+
+<!-- ЭКРАН 4 -->
+
+<section class="screen" id="s4">
+<div class="card">
+
+<h2>Наша история 📸</h2>
+
+<p>
+Здесь будут наши самые любимые моменты ❤️
+</p>
+
+<div class="photos">
+
+<div class="photo">📸<br>Наш момент</div>
+<div class="photo">📸<br>Наш момент</div>
+<div class="photo">📸<br>Наш момент</div>
+<div class="photo">📸<br>Наш момент</div>
+<div class="photo">📸<br>Наш момент</div>
+<div class="photo">📸<br>Наш момент</div>
+
+</div>
+
+<button onclick="go(5)">
+Для тебя ещё кое-что есть 💌
+</button>
+
+</div>
+</section>
+
+
+<!-- ЭКРАН 5 -->
+
+<section class="screen" id="s5">
+<div class="card">
+
+<h2>Немного от меня ❤️</h2>
+
+<div class="letter">
+
+Сашенька, моё солнышко ❤️<br><br>
+
+Я просто хочу сказать тебе, что очень сильно тебя люблю.
+
+Мне нравится всё наше — наши разговоры, наши шутки,
+наши маленькие моменты и даже те ситуации,
+когда мы можем немного поругаться,
+а потом всё равно тянемся друг к другу.<br><br>
+
+Спасибо тебе за то, что ты есть в моей жизни.
+За твою заботу, за объятия, за смех
+и за то чувство, когда рядом с тобой
+мне просто хорошо.<br><br>
+
+Ты для меня не просто мой парень.
+Ты мой самый родной человек,
+моё солнышко и мой любимый котёночек.
+
+Ну и иногда мой кабанчик, конечно же 😂❤️<br><br>
+
+Я очень ценю тебя и всё,
+что между нами есть.
+
+Люблю тебя. Очень. ❤️
+
+</div>
+
+<button onclick="go(6)">
+И последнее…
+</button>
+
+</div>
+</section>
+
+
+<!-- ЭКРАН 6 -->
+
+<section class="screen" id="s6">
+<div class="card">
+
+<div class="heart">❤️</div>
+
+<h1>Саша, ты мой.</h1>
+
+<p>
+Твоя любовь, твоя головная боль<br>
+и твоя любимая девочка уже никуда не денется. ❤️
+</p>
+
+<p>
+Твой любимый кабанчик тоже тебя любит 🐷❤️
+</p>
+
+<p class="small">
+P.S. Я очень тебя люблю.
+</p>
+
+</div>
+</section>
+
+
+<script>
+
+function go(number){
+
+document.querySelectorAll(".screen")
+.forEach(function(screen){
+screen.classList.remove("active");
+});
+
+document.getElementById("s"+number)
+.classList.add("active");
+
+}
+
+
+/* УБЕГАЮЩАЯ КНОПКА */
+
+function setup(){
+
+const noButton=document.getElementById("noBtn");
+
+if(!noButton){
+setTimeout(setup,100);
+return;
+}
+
+function runAway(event){
+
+if(event){
+event.preventDefault();
+}
+
+const x=Math.random()*240-120;
+const y=Math.random()*260-130;
+
+noButton.style.transform=
+"translate("+x+"px,"+y+"px)";
+
+const texts=[
+"НЕТ 😐",
+"Точно? 🥺",
+"Подумай ещё 😭",
+"Не получится 😌",
+"Нажми ДА ❤️"
+];
+
+noButton.textContent=
+texts[Math.floor(Math.random()*texts.length)];
+
+}
+
+noButton.addEventListener("mouseover",runAway);
+noButton.addEventListener("touchstart",runAway);
+noButton.addEventListener("click",runAway);
+
+}
+
+setup();
+
+</script>
+
+</body>
+</html>
